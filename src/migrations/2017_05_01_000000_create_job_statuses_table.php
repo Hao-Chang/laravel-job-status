@@ -12,8 +12,9 @@ class CreateJobStatusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('job_statuses', function (Blueprint $table) {
+        Schema::create('batch_jobs', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('user_account', 30)->index()->nullable();
             $table->string('job_id')->index()->nullable();
             $table->string('type')->index();
             $table->string('queue')->index()->nullable();
@@ -36,6 +37,6 @@ class CreateJobStatusesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('job_statuses');
+        Schema::drop('batch_jobs');
     }
 }

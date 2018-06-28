@@ -41,6 +41,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class JobStatus extends Model
 {
+    protected $table = 'batch_jobs';
+
     const STATUS_QUEUED = 'queued';
     const STATUS_EXECUTING = 'executing';
     const STATUS_FINISHED = 'finished';
